@@ -13,6 +13,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <by.slavintodron.pomodoro.customview.CustomView
+            android:id="@+id/custom_view"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:custom_color="@color/purple_500"
+            app:custom_style="fill"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/stopwatch_timer"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
             android:id="@+id/blinking_indicator"
             android:layout_width="8dp"
@@ -22,6 +32,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <TextView
             android:id="@+id/stopwatch_timer"
@@ -35,39 +46,35 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/start_pause_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:background="@color/cardview_light_background"
-            android:padding="8dp"
-            android:src="@drawable/ic_baseline_play_arrow_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/restart_button"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
             android:id="@+id/restart_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="95dp"
             android:background="@color/cardview_light_background"
             android:padding="8dp"
             android:src="@drawable/ic_baseline_refresh_24"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/delete_button"
+            app:layout_constraintStart_toStartOf="@+id/buttonSP"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/delete_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
             android:background="@color/cardview_light_background"
             android:padding="8dp"
             android:src="@drawable/ic_baseline_delete_24"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/restart_button"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonSP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/custom_view"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
